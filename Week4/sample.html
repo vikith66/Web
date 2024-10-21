@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Seva</title>
+    <style>
+        body{
+            font-family:'Roboto', sans-serif
+        }
+        h1{
+            color: rgb(0, 72, 131);
+            font-family: "Poppins", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            text-align: center;
+        }
+        .grey-text{
+            color: #808080;
+            text-align: right;
+        }
+        form{
+            padding: 0 400px;
+        }
+        .container{
+            margin-top: 100px;
+            margin-left: 50px;     
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            margin-left: 150px;
+            font-size: 20px;
+            justify-content: left;
+        }
+        .col-25{
+            width: 200px;
+        }
+        .col-75{
+            padding-left: 300px;
+        }
+        .smallText{
+            font-size: 12px;
+        }
+        .btnContainer{
+            margin-left: 350px;
+            margin-top: 40px;
+        }
+        .submit{
+            margin-left: 50px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .reset{
+            margin-left: 50px;            
+            padding: 10px;            
+            border-radius: 10px;
+        } 
+        input{
+            padding: 5px;
+            border-radius: 10px;
+        }
+        input:focus {
+            background-color: rgb(189, 189, 189);
+        }
+        input:hover{
+            box-shadow: inset 1px 2px 8px rgba(0, 0, 0, 0.02);
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST">
+        <h1>User Registration</h1><p class="grey-text">Fields marked with asterisk (*) are mandatory</p>
+        <p>Important Information: Passport application can be processed at any<br> /POPSK/PSLK WITHIN INDIA irrespective of your residential address.</p>
+        
+        
+        <ul style="list-style-type:square;">
+            <li><a href="">Click here</a> to check the appointment availability at all PSK/POPSK/PSLK.</li>
+            <li><a href="">Click here</a> to know more about Apply Anywhere in India scheme for Passport Services</li>
+        </ul>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label for="apply-at">Register to apply at*</label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="radio" name="apply-at" value="CPV Delhi">
+                        <label for="cpv-delhi">CPV Delhi</label><br>
+                        <input type="radio" name="apply-at" value="Passport Office">
+                        <label for="passport-office">Passport Office</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label for="apply-at">Passport Office * <br>
+                            <span class="smallText">(As per Present Residential Address)</span></label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <select name="list" id="list">
+                            <option selected disabled>---Select---</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Amritsar">Amritsar</option>
+                            <option value="Bareilly">Bareilly</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Bhopal">Bhopal</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label for="given-name">Given Name <br>
+                            <span class="smallText">(Max 45 Characters)*</span></label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="text" name="given-name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label for="surname">Surname <br>
+                        <span class="smallText">(Max 45 Characters)*</span></label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="text" name="given-name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label for="dob">Date of Birth <span class="smallText">(DD/MM/YYYY)*</span> </label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="date" name="dob">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label for="surname">E-mail Id <br>
+                        <span class="smallText">(Max 35 Characters)*</span></label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="email" name="given-name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label class="EmailIdText" for="surname">Do you want your Login Id
+                            <br>to be same as E-mail Id?</label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="email" name="given-name">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label class="EmailIdText" for="surname">Login Id*
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="text" name="login-id">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label class="password" for="surname">Password*
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="password" name="password">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label class="confirm-password" for="surname">Confirm-Password</label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <input type="password" name="confirm-password">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <div class="form-group">
+                        <label class="hintQues" for="hintQues">Hint Question*</label>
+                    </div>
+                </div>    
+                <div class="col-75">
+                    <div class="form-group">
+                        <select name="list" id="list">
+                            <option selected disabled>---Select---</option>
+                            <option value="Birth City">Birth City</option>
+                            <option value="Favorite Color">Favorite Color</option>
+                            <option value="Favorite Cricketer">Favorite Cricketer</option>
+                            <option value="Favorite Food">Favorite Food</option>
+                            <option value="First School">First School</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="btnContainer">
+                <input type="submit" class="submit">
+                <input type="reset" class="reset">
+            </div>
+            
+        </div>
+
+
+    </form> 
+
+</body>
+</html>

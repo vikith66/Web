@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-25 {
+  width: 25%;
+  padding: 15px;
+}
+
+.col-75 {
+  width: 75%;
+  padding: 15px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.clear {
+  background-color: #f44336;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+.clear:hover {
+  background-color: #d93025;
+}
+
+.info {
+  font-size: 14px;
+  color: #777;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>User Registration</h2>
+  <p>Fields marked with asterisk (*) are mandatory</p>
+  <p class="info">Important Information: Passport application can be processed at any PSK/POPSK/PSLK WITHIN INDIA irrespective of your residential address.</p>
+  <p class="info">■ Click here to check the appointment availability at all PSK/POPSK/PSLK.</p>
+  <p class="info">■ Click here to know more about Apply Anywhere in India scheme for Passport Services.</p>
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="apply-at">Register to apply at*</label>
+          <input type="radio" id="cpv-delhi" name="apply-at" value="CPV Delhi">
+          <label for="cpv-delhi">CPV Delhi</label><br>
+          <input type="radio" id="passport-office" name="apply-at" value="Passport Office">
+          <label for="passport-office">Passport Office</label>
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <label class="label" for="first-name">First Name + Middle Name</label>
+          <p class="info">Initials and honorifics (e.g. Dr., Col., etc.) are not allowed.</p>
+          <input type="text" id="first-name" name="first-name" placeholder="First Name + Middle Name" class="input-field">
+        </div>
+        <div class="form-group">
+          <label class="label" for="select-cpv">Select the 'CPV Delhi' option to apply for Diplomatic/Official passport at Consular, Passport and Visa (CPV) division, Delhi.</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="given-name">Given Name (Max 45 Characters)*</label>
+          <input type="text" id="given-name" name="given-name" placeholder="Given Name" class="input-field">
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <label class="label" for="surname">Surname (Max 45 Characters)</label>
+          <input type="text" id="surname" name="surname" placeholder="Surname" class="input-field">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="date-of-birth">Date of Birth (DD/MM/YYYY)*</label>
+          <input type="text" id="date-of-birth" name="date-of-birth" placeholder="DD/MM/YYYY" class="input-field">
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <label class="label" for="email-id">E-mail Id (Max 35 Characters)*</label>
+          <input type="text" id="email-id" name="email-id" placeholder="E-mail Id" class="input-field">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="login-id">Login Id*</label>
+          <input type="text" id="login-id" name="login-id" placeholder="Login Id" class="input-field">
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <label class="label" for="password">Password*</label>
+          <input type="password" id="password" name="password" placeholder="Password" class="input-field">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="confirm-password">Confirm Password*</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" class="input-field">
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <label class="label" for="hint-question">Hint Question*</label>
+          <select id="hint-question" name="hint-question" class="input-field">
+            <option value="Select">----- Select -----</option>
+            <option value="Favorite Color">Favorite Color</option>
+            <option value="Pet Name">Pet Name</option>
+            <option value="City of Birth">City of Birth</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="hint-answer">Hint Answer*</label>
+          <input type="text" id="hint-answer" name="hint-answer" placeholder="Hint Answer" class="input-field">
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <label class="label" for="enter-characters">Enter Characters Displayed *</label>
+          <img src="captcha.png" alt="Captcha" class="captcha">
+          <input type="text" id="enter-characters" name="enter-characters" placeholder="Enter Characters" class="input-field">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <div class="form-group">
+          <label class="label" for="same-login">Do you want your Login Id to be same as E-mail Id?</label>
+          <input type="radio" id="yes" name="same-login" value="Yes">
+          <label for="yes">Yes</label><br>
+          <input type="radio" id="no" name="same-login" value="No">
+          <label for="no">No</label>
+        </div>
+      </div>
+      <div class="col-75">
+        <div class="form-group">
+          <a href="#" class="button">Check Availability</a>
+          <a href="#" class="button">Password Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <input type="submit" value="Register" class="button">
+      </div>
+      <div class="col-75">
+        <input type="reset" value="Clear" class="clear">
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
