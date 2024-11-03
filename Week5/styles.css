@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    background-color: #fffef0;
+}
+h1{
+    text-align: center;
+    font-size: 60PX;
+}
+.navbar {
+    background-color: rgba(51, 51, 51, 0.158);
+    padding: 40px 0;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-menu li {
+    display: inline;
+    margin-right: 10%;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+    color: black;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    justify-items: center;
+    align-items: start;
+}
+
+
+.item {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 300px;
+    transform: scale(1);
+    transition: transform .2s;
+}
+.item:hover{
+    transform: scale(1.1);
+}
+.item img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+.description {
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+/* 992px above */
+@media (min-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    h1 {
+        font-size: 48px;
+    }
+    .description{
+        font-size: 16px;
+    }
+}
+
+/* 768px - 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .navbar {
+        padding: 20px 0;
+    }
+    .description{
+        font-size: 14px;
+    }
+    .nav-menu a {
+        font-size: 18px;
+    }
+}
+
+/* 767px below */
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    .description{
+        font-size: 12px;
+    }
+    .navbar {
+        padding: 10px 0;
+    }
+    .nav-menu a {
+        font-size: 16px;
+    }
+}
