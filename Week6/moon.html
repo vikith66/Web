@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Eclipse Animation</title>
+    <style>
+        /* Reset and background */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d1b2a;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .moon {
+            width: 200px;
+            height: 200px;
+            background-color: #f5f3ce;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .shadow {
+            width: 200px;
+            height: 200px;
+            background-color: #0d1b2a;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: -200px;
+            animation: eclipse 5s infinite ease-in-out;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes eclipse {
+            0% {
+                left: -200px;
+            }
+
+            50% {
+                left: 0;
+            }
+
+            100% {
+                left: 200px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="moon"></div>
+        <div class="shadow"></div>
+    </div>
+</body>
+
+</html>

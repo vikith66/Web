@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Cradle Animation</title>
+    <style>
+        body {
+            background-color: #0d1b2a;
+        }
+
+        .pendulum {
+            position: absolute;
+            width: 330px;
+            height: 270px; 
+            background-color: #e4f0a2;
+            top: 50%;
+            left: 50%;
+            border-radius: 5%;
+            align-items: center;
+            border-top: 20px solid #ffb700;
+            transform: translate(-50%, -50%);
+        }
+
+        .pendulum_box {
+            display: flex;
+            padding: 180px 0 0 20px; 
+            position: absolute;
+            flex: 1;
+        }
+
+        .ball {
+            height: 60px; 
+            width: 60px; 
+            border-radius: 50%;
+            background-color: #554581;
+            position: relative;
+            transform-origin: 50% -300%;
+        }
+
+        .ball::before {
+            content: '';
+            width: 3px; 
+            height: 180px; 
+            background-color: #ce2ee7;
+            left: 28px; 
+            top: -180px;
+            position: absolute;
+        }
+
+        .ball.first {
+            animation: firstball 1.2s alternate ease-in infinite;
+        }
+
+        @keyframes firstball {
+            0% {
+                transform: rotate(35deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .ball.last {
+            animation: lastball 1.2s alternate ease-out infinite;
+        }
+
+        @keyframes lastball {
+            50% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-35deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pendulum">
+        <div class="pendulum_box">
+            <div class="ball first"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball last"></div>
+        </div>
+    </div>
+</body>
+
+</html>
