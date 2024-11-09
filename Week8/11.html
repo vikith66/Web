@@ -3,52 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Example</title>
+    <title>Welcome Page with Cookies</title>
+</head>
+<body>
+    <h1>Welcome Page</h1>
+    <div id="welcomeMessage"></div>
+
     <script>
         function setCookie(name, value, days) {
-            const d = new Date();
-            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-            const expires = "expires=" + d.toUTCString();
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + date.toUTCString();
             document.cookie = name + "=" + value + ";" + expires + ";path=/";
         }
 
         function getCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
             for (let i = 0; i < ca.length; i++) {
                 let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
             }
             return null;
         }
 
-        window.onload = function() {
-            const userName = getCookie("username");
-            const lastAccess = getCookie("lastAccess");
-            const currentTime = new Date().toLocaleTimeString(); // Get current time
+       function displayWelcomeMessage() {
+            let userName = getCookie("userName");
+            let lastVisit = getCookie("lastVisit");
 
             if (userName) {
-                document.getElementById("welcomeMessage").innerText = `Welcome back, ${userName}!`;
-                document.getElementById("lastAccess").innerText = `Your last access was at: ${lastAccess}`;
+                let message = `Welcome back, ${userName}! Your last visit was on ${lastVisit}`;
+                document.getElementById("welcomeMessage").innerText = message;
             } else {
-                const name = prompt("Please enter your name:");
-                if (name) {
-                    setCookie("username", name, 30);
-                    setCookie("lastAccess", currentTime, 30);
-                    document.getElementById("welcomeMessage").innerText = `Welcome, ${name}!`;
-                    document.getElementById("lastAccess").innerText = `Your last access was at: ${currentTime}`;
+                userName = prompt("Welcome! Please enter your name:");
+                if (userName) {
+                    setCookie("userName", userName, 30);  // Cookie expires in 30 days
+                    message = `Hello, ${userName}! Welcome to our site.`;
+                    document.getElementById("welcomeMessage").innerText = message;
                 }
             }
 
-            if (userName) {
-                setCookie("lastAccess", currentTime, 30);
-            }
-        };
+            let currentDate = new Date().toLocaleString();
+            setCookie("lastVisit", currentDate, 30);
+        }
+        displayWelcomeMessage();
     </script>
-</head>
-<body>
-    <h1 id="welcomeMessage"></h1>
-    <p id="lastAccess"></p>
 </body>
 </html>
